@@ -13,8 +13,38 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/index/index",
+          "name": "登录",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "首页",
           "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "表单",
+          "pathName": "pages/join_info/join_info",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "修改",
+          "pathName": "pages/modify/modify",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/admin/admin",
+          "pathName": "pages/admin/admin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/list/list",
+          "pathName": "pages/list/list",
           "query": "",
           "scene": null
         }

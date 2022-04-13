@@ -79,7 +79,7 @@ Page({
               sessionId: wx.getStorageSync('sessionId')
             },
             success:function(res2){
-              console.log(res2.data.data.token)
+              console.log(res2)
               // app.globalData.token=res2.data.data.token
               wx.setStorageSync('token', res2.data.data.token)
             }

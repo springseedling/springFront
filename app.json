@@ -18,8 +18,8 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarBackgroundColor": "#59e670",
+    "navigationBarTitleText": "春禾支教",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
