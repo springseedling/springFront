@@ -1,0 +1,32 @@
+<!-- <view style="margin:20rpx 0;">
+<van-cell-group inset>
+<view style="margin:40rpx;text-align:center;">
+<van-icon name="smile-o" size="50px" color="#07c160" />
+</view>
+  <van-cell title="用户名" value="{{user.username}}"/>
+  <van-cell title="昵称" value="{{user.nickname}}"/>
+  <van-cell title="地址" value="{{user.address}}"/>
+</van-cell-group>
+</view> -->
+<!--pages/index/index.wxml-->
+<view>
+  <view class="title">
+    <view>姓名</view>
+    <view>手机号</view>
+    <view>学信网验证码</view>
+    <view class="oper">操作</view>
+  </view>
+  <block wx:for="{{joins}}" wx:item="product" wx:key="this">
+  <view class="item">
+    <view>{{item.name}}</view>
+    <view>{{item.phone}}</view>
+    <view>{{item.number}}</view>
+    <view class="oper">
+    <view ><button size="mini" bindtap="oper" data-oper="del" data-id="{{item.id}}">删除</button></view>
+    <view><button size="mini" data-id="{{item.id}}" data-oper="update" bindtap="oper" data-name="{{item.name}}" data-phone="{{item.phone}}" data-number="{{item.number}}">修改</button></view>
+      
+    </view>
+  </view>
+  </block>
+</view>
+

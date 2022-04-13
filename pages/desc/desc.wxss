@@ -1,0 +1,17 @@
+.title{
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.intro {
+  display: block;
+  margin: 0px 10px;
+}
+.intro text{
+  line-height: 25px;
+}
+.van-button--info{
+  width: 80%;
+}
+

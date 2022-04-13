@@ -1,0 +1,51 @@
+<view class="block">
+            <view class="list_item">
+                <view class="title">支教组织名称:</view>
+                <view class="titlea">{{onelist.org_name}}</view>
+            </view>
+            <view class="list_item">
+                <view class="title">活动名称：</view>
+                <view class="titlea">{{onelist.item_name}}</view>
+            </view>
+            <view class="list_item">
+                <view class="title">地址：</view>
+                <view class="titlea">{{onelist.address}}</view>
+            </view>
+            <view class="list_item">
+                <view class="title">课程：</view>
+                <view class="titlea">{{onelist.course}}</view>
+            </view>
+            <view class="list_item">
+                <view class="title">年级：</view>
+                <view class="titlea">{{onelist.grade}}</view>
+            </view>
+            <view class="list_item">
+                <view class="title">所需人数：</view>
+                <view class="titlea">{{onelist.need_num}}</view>
+            </view>
+            <view class="list_item">
+                <view class="title">已报名人数：</view>
+                <view class="titlea">{{onelist.present_num}}</view>
+            </view>
+            <view class="list_item">
+                <view class="title">支教组织简介：</view>
+                <view class="titlea">{{onelist.org_profile}}</view>
+            </view>
+            <view class="list_item">
+                <view class="title">支教活动简介：</view>
+                <view class="titlea">{{onelist.act_profile}}</view>
+            </view>
+            <view class="list_item">
+                <view class="title">报名时间：</view>
+                <view class="titlea">{{onelist.join_time}}</view>
+            </view>
+            <view class="list_item">
+                <view class="title">活动开始时间：</view>
+                <view class="titlea">{{onelist.act_time}}</view>
+            </view>
+            <view class="list_item">
+                <view class="title">活动发布时间：</view>
+                <view class="titlea">{{onelist.release_time}}</view>
+            </view>
+</view>
+<button type="primary" style="margin: 0 5px">我要报名</button>

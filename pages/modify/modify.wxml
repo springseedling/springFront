@@ -1,0 +1,23 @@
+<van-cell-group>
+  <van-field
+    model:value="{{ name }}"
+    label="姓名"
+    placeholder="请输入姓名"
+    required
+  />
+  <van-field
+    model:value="{{ phone }}"
+    label="联系方式"
+    placeholder="请输入手机号"
+    required
+  />
+  <van-field
+    model:value="{{ number }}"
+    label="学信网验证码"
+    placeholder="请输入学信网验证码"
+    required
+  />
+</van-cell-group>
+<view class="commit">
+<van-button type="info" bind:click="update">提交信息</van-button>
+</view>

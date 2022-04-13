@@ -2,9 +2,19 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/vip/vip",
+    "pages/login/login",
+    "pages/info/info",
+    "pages/desc/desc",
+    "pages/join/join",
+    "pages/join_info/join_info",
+    "pages/find/find",
+    "pages/modify/modify",
+    "pages/contact/contact",
+    "pages/help/help",
     "pages/admin/admin",
-    "pages/my/my"
+    "pages/list/list",
+    "pages/actDesc/actDesc",
+    "pages/sign/sign"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -27,7 +37,7 @@
         "selectedIconPath": "./pages/pic/release1.png"
       },
       {
-        "pagePath": "pages/my/my",
+        "pagePath": "pages/login/login",
         "text": "我的",
         "iconPath": "./pages/pic/my.png",
         "selectedIconPath": "./pages/pic/my1.png"

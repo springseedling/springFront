@@ -1,0 +1,14 @@
+.list_item .title,.list_item .titlea {
+  color: #404040;
+  font-size: 32rpx;
+  margin-right: 20rpx;
+}
+.list_item {
+  align-items: center;
+  border-top: 1px solid #efefef;
+  display: flex;
+  padding: 25rpx 20rpx;
+}
+.block {
+  background: #fff;
+}

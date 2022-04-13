@@ -1,0 +1,25 @@
+<view class="title">
+<image src="https://s4.ax1x.com/2022/02/26/bVyCdK.jpg"></image>
+<text>
+美丽中国</text>
+</view>
+<view class="intro">
+<text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<text style="font-weight:bold;">简介</text>：守望者支教组织是教育类民间公益机构，由在校大学生发起于2010年12月，致力于改善西部教育状况，引导更多大学生关注乡村发展，树立社会责任感活动通过网络面向全国招募大学生志愿者，开展以寒暑假短期支教为主的西部山区乡村志愿服务活动。
+</text>
+<text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<text style="font-weight:bold;">支教时间</text>：2022年2月1日-3月1日
+</text>
+<text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<text style="font-weight:bold;">支教地点</text>：河南省郑州市金水区
+</text>
+<text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<text style="font-weight:bold;">支教科目</text>：初中英语
+</text>
+<text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<text style="font-weight:bold;">招募人数</text>：5人
+</text>
+<text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<text style="color: red">剩余名额</text>：2人
+</text>
+<view style="margin:10px 0 20px 0;text-align:center;">
+<van-button type="info" bindtap="join">立即报名</van-button>
+</view>
+</view>
+
+
+

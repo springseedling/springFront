@@ -1,0 +1,125 @@
+.card {
+  background-color: #fff;
+  border-radius: 16rpx;
+  box-shadow: 0rpx 0rpx 101rpx 0rpx rgba(0,0,0,.08),0rpx 12rpx 26rpx 0rpx rgba(0,0,0,.05);
+  margin: 20rpx auto;
+  overflow: hidden;
+  position: relative;
+  width: 680rpx;
+}
+
+.card-header {
+  border-radius: 10rpx;
+  height: 353rpx;
+  margin: 20rpx;
+  overflow: hidden;
+  width: 640rpx;
+}
+
+.card-image {
+  height: 100%;
+  width: 100%;
+}
+
+.card-main {
+  padding: 0 20rpx 20rpx;
+}
+
+.card-main .card-col {
+  position: relative;
+}
+
+.card-title {
+  color: #1d1e3a;
+  font-size: 34rpx;
+  font-weight: 700;
+}
+
+.card-desc {
+  color: #8f9095;
+  font-size: 26rpx;
+}
+
+.card-detail {
+  align-items: center;
+  display: flex;
+  font-size: 30rpx;
+  justify-content: space-between;
+  margin: 10rpx 0;
+}
+
+.card-price {
+  text-align: left;
+}
+
+.card-views {
+  color: #1d1e3a;
+  display: flex;
+  text-align: right;
+}
+
+.card-views-icon {
+  align-self: center;
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.search {
+  border-radius: 20rpx;
+  left: 10%;
+  overflow: hidden;
+  position: absolute;
+  top: 40rpx;
+  width: 80%;
+  z-index: 1000;
+}
+
+.search,.search button {
+  background: #fff;
+  height: 80rpx;
+}
+
+.search button {
+  border: 0;
+  border-radius: 20rpx;
+  float: right;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  margin-right: -2rpx;
+  width: 30%;
+}
+
+.search button:after {
+  border-left: 1px solid rgba(0,0,0,.2);
+  border-radius: 10px;
+  box-sizing: border-box;
+  height: 200%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: scale(.5);
+  transform-origin: 0 0;
+  width: 200%;
+}
+
+.search input {
+  float: left;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-left: 5%;
+  width: 60%;
+}
+
+.header {
+  background: -webkit-gradient(linear,0 0,0 bottom,from(#8ff19c),to(#def3e7));
+  height: 160rpx;
+  position: fixed;
+  top: 0rpx;
+  width: 100%;
+  z-index: 999999;
+}
+
+button::after {
+  border: none;
+}

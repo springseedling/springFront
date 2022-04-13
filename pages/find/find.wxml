@@ -1,0 +1,20 @@
+<!--pages/find/find.wxml-->
+<view class="table">
+ <view class="tr bg-w">
+ <view class="th">姓名</view>
+ <view class="th">手机号</view>
+ <view class="th ">学信网验证码</view>
+ </view>
+ <block wx:for="{{joins}}" wx:key="this">
+ <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+ <view class="td">{{item.name}}</view>
+ <view class="td">{{item.phone}}</view>
+ <view class="td">{{item.number}}</view>
+ </view>
+ <view class="tr" wx:else>
+ <view class="td">{{item.name}}</view>
+ <view class="td">{{item.phone}}</view>
+ <view class="td">{{item.number}}</view>
+ </view>
+ </block>
+</view>

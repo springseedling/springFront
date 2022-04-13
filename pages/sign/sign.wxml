@@ -1,0 +1,47 @@
+<view class="container">
+<view class="login_top">注 册</view>
+  <view class="login_medium">
+    <van-field
+    model:value="{{phone}}"
+    label="手机号"
+    left-icon="phone-o"
+    placeholder="请输入手机号"
+    error-message="{{phoneError}}"
+    title-width="70px"
+  />
+  <van-field
+    model:value="{{ code }}"
+    center
+    clearable
+    left-icon="certificate"
+    label="短信验证码"
+    placeholder="输入验证码"
+    use-button-slot
+    title-width="70px"
+  >
+    <van-button slot="button" size="small" type="primary" bindtap="send">
+      发送
+    </van-button>
+  </van-field>
+  <van-field
+    model:value="{{ password }}"
+    placeholder="请输入密码"
+    left-icon="lock"
+    password="true"
+  />
+  <view style="margin-top:10px;margin-left:6px">
+  <van-radio-group
+  model:value="{{ role }}"
+  direction="horizontal"
+>
+  <van-radio name="学生">学生</van-radio>
+  <van-radio name="支教组织">支教组织</van-radio>
+  <van-radio name="管理员">管理员</van-radio>
+</van-radio-group>
+</view>
+  </view>
+<view class="login_bottom">
+
+<van-button type="primary" bind:click="login">注册</van-button>
+</view>
+</view>

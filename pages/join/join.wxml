@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="login_top">登 录</view>
+  <view class="login_medium">
+  <van-field
+    model:value="{{ username }}"
+    placeholder="请输入用户名"
+    bind:change="onChange"
+    left-icon="user-o"
+  />
+  <van-field
+    model:value="{{ password }}"
+    placeholder="请输入密码"
+    bind:change="onChange"
+    left-icon="lock"
+    password="true"
+  />
+</view>
+<view class="login_bottom">
+<van-button type="primary" bind:click="login">登录</van-button>
+</view>
+</view>
+
+

@@ -1,0 +1,68 @@
+<view class="container" wx:if="{{user == ''}}">
+  <view class="login_top">登 录</view>
+  <view class="login_medium">
+    <van-field
+    model:value="{{ username }}"
+    left-icon="phone-o"
+    placeholder="请输入手机号"
+    title-width="70px"
+    maxlength="11"
+    bindinput="inputs"
+  />
+  <van-field
+    model:value="{{ password }}"
+    placeholder="请输入密码"
+    left-icon="lock"
+    password="true"
+  />
+</view>
+<view class="login_bottom">
+<van-button type="primary" bind:click="login">登录</van-button>
+</view>
+<view class="sign_bottom">
+<van-button type="primary" bind:click="sign" size="small" color="linear-gradient(45deg, #39b54a, #8dc63f)">注册</van-button>
+</view>
+</view>
+
+
+<view wx:if="{{user != ''}}">
+  <view style="margin:20rpx 0;">
+<van-cell-group inset>
+<view style="margin:40rpx;text-align:center;">
+<van-icon name="fire-o" size="50px" color="#07c160" />
+</view>
+  <van-cell title="uid" value="{{user.uid}}"/>
+  <van-cell title="用户名" value="{{user.username}}"/>
+  <van-cell title="角色" value="{{user.role}}"/>
+</van-cell-group>
+<view style="margin:17px;">
+<van-cell
+  is-link
+  title="使用帮助"
+  link-type="navigateTo"
+  url="/pages/help/help"
+/>
+<van-cell
+  is-link
+  title="联系客服"
+  link-type="navigateTo"
+  url="/pages/contact/contact"
+/>
+<van-cell
+  is-link
+  title="查看所有报名"
+  link-type="navigateTo"
+  url="/pages/find/find"
+/>
+<van-cell
+  is-link
+  title="管理报名信息"
+  link-type="navigateTo"
+  url="/pages/info/info"
+/>
+</view>
+<view style="margin:10px 30px">
+<van-button plain type="primary" bindtap="out">退出登录</van-button>
+</view>
+</view>
+</view>

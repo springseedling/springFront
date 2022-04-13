@@ -1,1 +1,6 @@
-/* pages/admin/admin.wxss */
+.van-button--primary{
+  width: 100%
+}
+.van-button--warning{
+  width: 100%
+}

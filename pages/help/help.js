@@ -1,4 +1,4 @@
-// pages/vip/vip.js
+// pages/help/help.js
 Page({
 
   /**

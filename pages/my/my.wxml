@@ -1,6 +1,0 @@
-<view class="container">
-<view style="margin-bottom:20px;">
-<button bind:tap="onChange" type="primary" wx:if="{{flag}}">登录</button>
-<view wx:if="{{!flag}}">个人信息界面展示</view>
-</view>
-</view>

@@ -1,0 +1,6 @@
+.commit{
+  text-align: center;
+}
+.van-button--info{
+  width:100%;
+}

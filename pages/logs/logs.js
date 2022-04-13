@@ -14,11 +14,5 @@ Page({
         }
       })
     })
-    this.getTabBar().init()
-    this.getTabBar().checkPermission()
-  },
-  onShow() {
-    this.getTabBar().init()
-    this.getTabBar().checkPermission()
   }
 })
