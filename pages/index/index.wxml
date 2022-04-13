@@ -1,0 +1,2 @@
+<van-button type="danger">危险按钮</van-button>
+<van-button plain type="info">朴素按钮</van-button>

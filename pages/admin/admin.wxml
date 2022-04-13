@@ -1,0 +1,2 @@
+<!--pages/admin/admin.wxml-->
+<button bindtap="spread" type="default">发布支教信息</button>
