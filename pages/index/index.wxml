@@ -1,2 +1,66 @@
-<van-button type="danger">危险按钮</van-button>
-<van-button plain type="info">朴素按钮</van-button>
+<van-notice-bar
+  left-icon="volume-o"
+  text="春禾支教是一个为乡村支教提供服务和保障的公益平台，致力于推动乡村振兴，守护乡土记忆。"
+/>
+<view>
+<van-search value="{{ value }}" placeholder="请输入支教活动名称" />
+</view>
+
+<!-- <view>
+  <picker mode="region"  bindchange="getUserProvince">
+<van-cell value="所在位置" icon="location-o" is-link title-width="180px">
+  <view slot="title">
+    <view class="van-cell-text">
+      <view class="region">
+        <text wx:for="{{region}}"wx:key="region">{{item}} </text>
+      </view>
+    </view>
+  </view>
+</van-cell>
+</picker>
+</view> -->
+
+<view class="content">
+<view bindtap="content">
+<van-card
+      tag="进行中"
+      title="美丽中国"
+      desc="为广大乡村学校的孩子提供优秀的兴趣启发课程，由在校大学生发起于2010年12月，致力于改善西部教育状况。"
+      thumb="https://s4.ax1x.com/2022/02/26/bVyCdK.jpg"
+      />
+    </view>
+
+<van-card
+      tag="进行中"
+      title="爱心暑期支教"
+      desc="一个以夏令营形式去开展的支教活动，由兴趣教学等部分组成，陪伴孩子们度过一个愉快的暑假。"
+      thumb="https://s4.ax1x.com/2022/02/26/bVy9Z6.jpg"
+      />
+<van-card
+      tag="即将开始"
+      title="善行100"
+      desc="以互联网为主要媒介的公益支教团队，为贫困地区学校和优秀志愿者搭建一座桥梁！"
+      thumb="https://s4.ax1x.com/2022/02/26/bVsxMR.jpg"
+      />
+<van-card
+      tag="已结束"
+      title="学堂计划"
+      desc="非营利性、以支教为主的、面向全社会的公益组织，为山区孩子募集学习和生活用品及完善校舍。"
+      thumb="https://s4.ax1x.com/2022/02/26/bVySqx.jpg"
+      />
+<van-card
+      tag="已结束"
+      title="支点支教"
+      desc="我们不是救世主，我们只是带着我们爱心走往陌生的地方，寻找懵懂的生命，并与之共同成长的旅客！"
+      thumb="https://s4.ax1x.com/2022/02/26/bVyPIO.jpg"
+      />
+ </view>
+ <!-- <button bindtap="login" type="primary">登录</button> -->
+ <view class="section">
+  <view class="section__title">省市区选择器</view>
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" level="provice">
+    <view class="picker">
+      当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
+    </view>
+  </picker>
+</view>

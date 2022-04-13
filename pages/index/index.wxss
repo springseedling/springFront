@@ -1,19 +1,13 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #aaa;
+.region button{
+  margin: 5px 0;
+  width: 100%
 }
-
-.userinfo-avatar {
-  overflow: hidden;
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.region {
+  margin: 0 10px;
 }
-
-.usermotto {
-  margin-top: 200px;
+.content {
+  margin: 0 10px;
+}
+.van-card {
+  margin: 5px 0;
 }
