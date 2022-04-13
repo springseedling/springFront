@@ -44,7 +44,7 @@
     "showES6CompileOption": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.19.6",
+  "libVersion": "2.23.4",
   "appid": "wx2fe98db2c40f2106",
   "projectname": "chunhe",
   "debugOptions": {
