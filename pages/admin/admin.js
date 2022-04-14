@@ -1,6 +1,10 @@
 Page({
 
   data: {
+    date1: '',
+    date2: '',
+    show1: false,
+    show2: false,
     i: 0,
     image1: 'https://spring-1309139497.cos.ap-beijing.myqcloud.com/%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87.png',
     image: ['https://spring-1309139497.cos.ap-beijing.myqcloud.com/%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87.png','https://spring-1309139497.cos.ap-beijing.myqcloud.com/%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87.png','https://spring-1309139497.cos.ap-beijing.myqcloud.com/%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87.png'],
@@ -91,8 +95,8 @@ Page({
         img: c[0],
         org_profile: this.data.org_profile,
         act_profile: this.data.act_profile,
-        join_time: this.data.joinTime,
-        act_time: this.data.actTime
+        join_time: this.data.day1,
+        act_time: this.data.day2
       },
       header:{
         'Authorization': wx.getStorageSync('token')
@@ -112,7 +116,66 @@ Page({
     // this.setData({
     //   c: c[0]
     // })
-  }
+   
+  },
+  onDisplay1() {
+    this.setData({ show1: true });
+  },
+  onClose1() {
+    this.setData({ show1: false });
+  },
+  formatDate(date) {
+    date = new Date(date);
+    return `${date.getMonth() + 1}/${date.getDate()}`;
+  },
+  onConfirm1(event) {
+    const [start, end] = event.detail;
+    this.setData({
+      show1: false,
+      date1: `${this.formatDate(start)} - ${this.formatDate(end)}`,
+    });
+    const a=this.data.date1;
+    const b= a.replaceAll('/','月')
+    var b1 = b.split(' ');
+    var b2 = b1[0].slice(0,10) + "日" + b1[0].slice(10)
+    var b3 = b1[2].slice(0,10) + "日" + b1[2].slice(10)
+    var c = [b2,b3]
+    console.log(c)
+    this.setData({
+      date1: b2+' - '+b3,
+      day1: c
+    })
+  },
+  
+  onDisplay2() {
+    this.setData({ show2: true });
+  },
+  onClose2() {
+    this.setData({ show2: false });
+  },
 
-    
+  onConfirm2(event) {
+    const [start, end] = event.detail;
+    this.setData({
+      show2: false,
+      date2: `${this.formatDate(start)} - ${this.formatDate(end)}`,
+    });
+    const a=this.data.date2;
+    const b= a.replaceAll('/','月')
+    var b1 = b.split(' ');
+    var b2 = b1[0].slice(0,10) + "日" + b1[0].slice(10)
+    var b3 = b1[2].slice(0,10) + "日" + b1[2].slice(10)
+    var c = [b2,b3]
+    console.log(c)
+    this.setData({
+      date2: b2+' - '+b3,
+      day2: c
+    })
+  },
+  bindRegionChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      region: e.detail.value
+    })
+  }
 })

@@ -1,76 +1,89 @@
 <van-cell-group>
   <van-field
     model:value="{{ orgId }}"
-    required
     placeholder="请输入id"
-    label="支教组织id"
+    label="• 支教组织id"
   />
   <van-field
     model:value="{{orgName}}"
-    required
     placeholder="请输入名称"
-    label="支教组织名称"
+    label="• 组织名称"
   />
   <van-field
     model:value="{{ joinTime }}"
-    required
     placeholder="（例如3月2日-4月10日）"
-    label="报名时间"
+    label="• 报名时间"
   />
+  <view>
+<van-cell title="• 报名日期 >" value="{{ date1 }}" bind:click="onDisplay1" />
+<van-calendar
+  show="{{ show1 }}"
+  type="range"
+  bind:close="onClose1"
+  bind:confirm="onConfirm1"
+/></view>
   <van-field
     model:value="{{ actTime }}"
-    required
     placeholder="（例如4月20日-5月10日）"
-    label="支教时间"
+    label="• 支教时间"
   />
+  <view>
+<van-cell title="• 支教日期 >" value="{{ date2 }}" bind:click="onDisplay2" />
+<van-calendar
+  show="{{ show2 }}"
+  type="range"
+  bind:close="onClose2"
+  bind:confirm="onConfirm2"
+/></view>
   <van-field
     model:value="{{ name }}"
-    required
-    label="项目名称"
+    label="• 项目名称"
     placeholder="请输入项目名称"
   />
 
   <van-field
     model:value="{{ address }}"
-    label="项目地区"
+    label="• 项目地区"
     placeholder="请输入详细地址（省市县区）"
-    required
   />
+  <view class="district">
+  <picker mode="region" bindchange="bindRegionChange">
+    <view class="picker">
+      <input value="• 支教地区 >      {{region[0]}}{{region[1]}}{{region[2]}}" class="input">
+      </input>
+    </view>
+  </picker>
+</view>
+
   <van-field
     model:value="{{ course }}"
-    label="教学科目"
+    label="• 教学科目"
     placeholder="请输入教学科目"
-    required
   />
   <van-field
     model:value="{{ grade }}"
-    label="年级"
+    label="• 年级"
     placeholder="请输入教学的年级"
-    required
   />
   <van-field
     model:value="{{ number }}"
-    label="需求人数"
+    label="• 需求人数"
     placeholder="请输入需求人数"
-    required
   />
   <van-field
     model:value="{{ numberd }}"
-    label="已报名人数"
+    label="• 已报名人数"
     placeholder="请输入已报名人数"
-    required
   />
   <van-field
     model:value="{{ org_profile }}"
-    label="支教组织简介"
+    label="• 组织简介"
     placeholder="请输入支教组织简介"
-    required
   />
   <van-field
     model:value="{{ act_profile}}"
-    label="支教活动简介"
+    label="• 活动简介"
     placeholder="请输入支教活动简介"
-    required
   />
 </van-cell-group>
 <!-- <image style="height:80px;width:80px;margin;margin:10px" bindtap="upload" src="../../../../img/0.jpg">上传封面图片</image> -->

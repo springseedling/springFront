@@ -55,12 +55,20 @@
       thumb="https://s4.ax1x.com/2022/02/26/bVyPIO.jpg"
       />
  </view>
- <!-- <button bindtap="login" type="primary">登录</button> -->
- <view class="section">
-  <view class="section__title">省市区选择器</view>
-  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" level="provice">
-    <view class="picker">
-      当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
-    </view>
+
+<!-- <van-row>
+  <van-col span="11">
+    <picker class="picker" mode="date" value="{{date1}}" start="2022-09-01" end="2023-09-01" bindchange="bindDateChange1">
+  <view>
+      开始: {{date1}}
+  </view>
   </picker>
-</view>
+  </van-col>
+  <van-col span="11">
+    <picker class="picker" mode="date" value="{{date2}}" start="2022-01-01" end="2023-12-31" bindchange="bindDateChange2">
+  <view>
+      结束: {{date2}}
+  </view>
+  </picker>
+  </van-col>
+</van-row> -->

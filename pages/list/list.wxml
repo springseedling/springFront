@@ -4,8 +4,31 @@
             <button bindtap="search" formType="submit">搜索</button>
     </view>
 </view>
-<view style="margin-top:80px">
-<view class="card-box" id="getheight">
+<view class="nav">
+    <view class="nav-son">
+        <view class="content">
+            <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+         <view class="picker">
+         {{region[2]}}
+         </view>
+        </picker>
+        </view>
+        <view class="icon"></view>
+    </view>
+    <view class="nav-son">
+    <view class="content">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      {{array[index]}}
+    </view>
+   </picker>
+    </view>
+        <view class="icon"></view>
+    </view>
+</view>
+
+<view style="margin-top:120px">
+<view class="card-box" id2="getheight">
     <view class="card" data-id="{{item.item_id}}" wx:for="{{list}}" wx:for-item="item" wx:key="key" bindtap="click">
         <view class="inner">
             <view class="card-header">

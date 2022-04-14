@@ -26,13 +26,19 @@ Page({
       url: '../desc/desc'
     })
   },
-
-    bindRegionChange: function (e) {
-      console.log('picker发送选择改变，携带值为', e.detail.value)
-      this.setData({
-        region: e.detail.value
-      })
-    },
+  bindDateChange1: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date1: e.detail.value
+    })
+  },
+  bindDateChange2: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date2: e.detail.value
+    })
+    console.log(this.data.date1<this.data.date2)
+  },
   // login(){
   //   var that = this
   //   wx.getUserProfile({
@@ -83,6 +89,4 @@ Page({
       }
     })
   },
-
-
 })

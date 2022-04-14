@@ -112,8 +112,8 @@
 }
 
 .header {
-  background: -webkit-gradient(linear,0 0,0 bottom,from(#8ff19c),to(#def3e7));
-  height: 160rpx;
+  background: -webkit-gradient(linear,0 0,0 bottom,from(#def3e7),to(#8ff19c));
+  height: 140rpx;
   position: fixed;
   top: 0rpx;
   width: 100%;
@@ -122,4 +122,42 @@
 
 button::after {
   border: none;
+}
+ 
+.nav {
+  background: -webkit-gradient(linear,0 0,0 bottom,from(#8ff19c),to(#def3e7));
+  border-bottom: 1rpx solid rgb(129, 255, 177);
+  position: fixed;
+  top: 140rpx;
+  width: 100%;
+  z-index: 99;
+}
+
+.nav,.nav-son {
+  display: flex;
+  height: 100rpx;
+}
+
+.nav-son {
+  align-items: center;
+  flex: 1;
+  font-size: 28rpx;
+  justify-content: center;
+  text-align: center;
+}
+
+.content {
+  color: #666;
+  font-size: 32rpx;
+}
+
+.content,.icon {
+  display: inline-block;
+}
+
+.icon {
+  border: 10rpx solid transparent;
+  border-color: transparent transparent transparent #666;
+  margin-left: 10rpx;
+  margin-top: 4rpx;
 }
