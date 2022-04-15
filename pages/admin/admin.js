@@ -53,6 +53,7 @@ Page({
 
   },
   commit(){
+    var that = this
     if(wx.getStorageSync('token')==''){
       wx.showToast({
         title: '未登录！',
@@ -76,6 +77,7 @@ Page({
     //秒
     var s = date.getSeconds();
     console.log(Y+'-'+M+'-'+D+' '+h+':'+m)
+    console.log(Y+M+D)
     wx.setStorageSync('time', Y+'-'+M+'-'+D+' '+h+':'+m)
     var a = this.data.image
     var b = a.join(",")
@@ -96,7 +98,9 @@ Page({
         org_profile: this.data.org_profile,
         act_profile: this.data.act_profile,
         join_time: this.data.day1,
-        act_time: this.data.day2
+        act_time: this.data.day2,
+        join_start: this.data.join_start,
+        join_end: this.data.join_end
       },
       header:{
         'Authorization': wx.getStorageSync('token')
@@ -129,12 +133,56 @@ Page({
     return `${date.getMonth() + 1}/${date.getDate()}`;
   },
   onConfirm1(event) {
+    var that = this
     const [start, end] = event.detail;
     this.setData({
       show1: false,
       date1: `${this.formatDate(start)} - ${this.formatDate(end)}`,
     });
     const a=this.data.date1;
+    const s = a.replaceAll('/','')
+    const z = s.split(' ')
+    z.splice(1,1)
+    if(z[0].length==2){
+        var d1 = z[0].slice(0,0) + "0" + z[0].slice(0)
+        var d2 = d1.slice(0,2) + "0" + d1.slice(2)
+        that.data.join_start = d2
+    }
+    if(z[0].length==3){
+       if(z[0][0]==1){
+        var d1 = z[0].slice(0,2) + "0" + z[0].slice(2)
+        that.data.join_start = d1
+       }else{
+        var d1 = z[0].slice(0,0) + "0" + z[0].slice(0)
+        that.data.join_start = d1
+       }
+    }
+    if(z[0].length==4){
+      that.data.join_start = z[0]
+    }
+    
+    if(z[1].length==2){
+      var d1 = z[1].slice(0,0) + "0" + z[1].slice(0)
+      var d2 = d1.slice(0,2) + "0" + d1.slice(2)
+      that.data.join_end = d2
+  }
+  if(z[1].length==3){
+     if(z[1][0]==1){
+      var d1 = z[1].slice(0,2) + "0" + z[1].slice(2)
+      that.data.join_end = d1
+     }else{
+      var d1 = z[1].slice(0,0) + "0" + z[1].slice(0)
+      that.data.join_end = d1
+     }
+  }
+  if(z[1].length==4){
+    that.data.join_end = z[1]
+  }
+  
+    this.setData({
+      join_start: z[0],
+      join_end: z[1]
+    })
     const b= a.replaceAll('/','月')
     var b1 = b.split(' ');
     var b2 = b1[0].slice(0,10) + "日" + b1[0].slice(10)

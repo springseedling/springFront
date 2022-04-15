@@ -12,6 +12,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    address: '',
+    datus: '',
     list1: [],
     array: ['全部', '即将进行', '招募中', '已结束'],
     objectArray: [
@@ -43,38 +45,42 @@ Page({
   onLoad(){
     this.getLocation()
     var that = this
-    wx.request({
-      url: 'http://localhost:8080/org/page',
-      data:{
-        item_name: this.data.keystr,
-        page: 1,
-        size: 5
-      },
-      success:function(res){
-        that.setData({
-          list1: res.data.data.current_data
-        })
-        for (let index=0; index < that.data.list1.length; index++) {
-          var a=that.data.list1[index].join_time;
-          var a1=a.replaceAll('"','')
-          var a2=a1.replaceAll('[','')
-          var a3=a2.replaceAll(']','')
-          var b =a3.split(',')
-          var c = b[0]+' - '+b[1]
-          that.data.list1[index].join_time = c
-         }
-         that.setData({
-           list: that.data.list1
-         })
-        // var a=res.data.data.current_data[10].join_time;
-        // var a1=a.replaceAll('"','')
-        // var a2=a1.replaceAll('[','')
-        // var a3=a2.replaceAll(']','')
-        // var b =a3.split(',')
-        // console.log(b[0]+' - '+b[1])
-        // console.log(res.data.data.current_data[10].join_time.replaceAll('"','').replaceAll('[','').replaceAll(']','').split(',')[0]+ ' - '+res.data.data.current_data[10].join_time.replaceAll('"','').replaceAll('[','').replaceAll(']','').split(',')[1])
-      },
-    })
+    setTimeout(function () {
+      wx.request({
+        url: 'http://localhost:8080/org/page',
+        data:{
+          item_name: that.data.keystr,
+          page: 1,
+          size: 5,
+          address: that.data.region,
+          status: that.data.datus
+        },
+        success:function(res){
+          that.setData({
+            list1: res.data.data.current_data
+          })
+          for (let index=0; index < that.data.list1.length; index++) {
+            var a=that.data.list1[index].join_time;
+            var a1=a.replaceAll('"','')
+            var a2=a1.replaceAll('[','')
+            var a3=a2.replaceAll(']','')
+            var b =a3.split(',')
+            var c = b[0]+' - '+b[1]
+            that.data.list1[index].join_time = c
+           }
+           that.setData({
+             list: that.data.list1
+           })
+          // var a=res.data.data.current_data[10].join_time;
+          // var a1=a.replaceAll('"','')
+          // var a2=a1.replaceAll('[','')
+          // var a3=a2.replaceAll(']','')
+          // var b =a3.split(',')
+          // console.log(b[0]+' - '+b[1])
+          // console.log(res.data.data.current_data[10].join_time.replaceAll('"','').replaceAll('[','').replaceAll(']','').split(',')[0]+ ' - '+res.data.data.current_data[10].join_time.replaceAll('"','').replaceAll('[','').replaceAll(']','').split(',')[1])
+        },
+      })
+    }, 5000)
   },
   click:function(e){
     wx.navigateTo({
@@ -108,7 +114,7 @@ Page({
     this.setData({
       num: 1
     })
-    this.onLoad();
+    this.onShow();
    },
    onReachBottom: function() {
      var that = this
@@ -124,6 +130,8 @@ Page({
         item_name: this.data.keystr,
         page: this.data.num,
         size: 5,
+        address: that.data.region,
+        status: that.data.datus
       },
       success:function(res){
         that.setData({
@@ -156,6 +164,8 @@ Page({
     this.setData({
       region: e.detail.value
     })
+    console.log(this.data.region)
+    this.onShow()
   },
   getLocation(e) {
     var _this = this;
@@ -184,8 +194,48 @@ Page({
     bindPickerChange: function(e) {
       console.log('picker发送选择改变，携带值为:', this.data.array[e.detail.value])
       this.setData({
+        datus: this.data.array[e.detail.value],
         index: e.detail.value
       })
+      this.onShow()
+    },
+
+    onShow(){
+      var that = this
+        wx.request({
+          url: 'http://localhost:8080/org/page',
+          data:{
+            item_name: that.data.keystr,
+            page: 1,
+            size: 5,
+            address: that.data.region,
+            status: that.data.datus
+          },
+          success:function(res){
+            that.setData({
+              list1: res.data.data.current_data
+            })
+            for (let index=0; index < that.data.list1.length; index++) {
+              var a=that.data.list1[index].join_time;
+              var a1=a.replaceAll('"','')
+              var a2=a1.replaceAll('[','')
+              var a3=a2.replaceAll(']','')
+              var b =a3.split(',')
+              var c = b[0]+' - '+b[1]
+              that.data.list1[index].join_time = c
+             }
+             that.setData({
+               list: that.data.list1
+             })
+            // var a=res.data.data.current_data[10].join_time;
+            // var a1=a.replaceAll('"','')
+            // var a2=a1.replaceAll('[','')
+            // var a3=a2.replaceAll(']','')
+            // var b =a3.split(',')
+            // console.log(b[0]+' - '+b[1])
+            // console.log(res.data.data.current_data[10].join_time.replaceAll('"','').replaceAll('[','').replaceAll(']','').split(',')[0]+ ' - '+res.data.data.current_data[10].join_time.replaceAll('"','').replaceAll('[','').replaceAll(']','').split(',')[1])
+          },
+        })
     },
 
 })
