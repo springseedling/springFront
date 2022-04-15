@@ -40,24 +40,21 @@ Page({
     flag: 0,
     num: 1,
   },
-  onShow(){
+  onLoad(){
+    this.getLocation()
     var that = this
-    if(that.data.flag!=1){
     wx.request({
       url: 'http://localhost:8080/org/page',
       data:{
         item_name: this.data.keystr,
         page: 1,
-        size: 2
+        size: 5
       },
       success:function(res){
-        console.log(res.data.data.current_data)
         that.setData({
           list1: res.data.data.current_data
         })
-        console.log(that.data.list1)
         for (let index=0; index < that.data.list1.length; index++) {
-          console.log(that.data.list1[index].join_time)
           var a=that.data.list1[index].join_time;
           var a1=a.replaceAll('"','')
           var a2=a1.replaceAll('[','')
@@ -65,7 +62,6 @@ Page({
           var b =a3.split(',')
           var c = b[0]+' - '+b[1]
           that.data.list1[index].join_time = c
-          console.log(that.data.list1)
          }
          that.setData({
            list: that.data.list1
@@ -77,8 +73,8 @@ Page({
         // var b =a3.split(',')
         // console.log(b[0]+' - '+b[1])
         // console.log(res.data.data.current_data[10].join_time.replaceAll('"','').replaceAll('[','').replaceAll(']','').split(',')[0]+ ' - '+res.data.data.current_data[10].join_time.replaceAll('"','').replaceAll('[','').replaceAll(']','').split(',')[1])
-      }
-    })}
+      },
+    })
   },
   click:function(e){
     wx.navigateTo({
@@ -112,7 +108,7 @@ Page({
     this.setData({
       num: 1
     })
-    this.onShow();
+    this.onLoad();
    },
    onReachBottom: function() {
      var that = this
@@ -127,15 +123,13 @@ Page({
       data:{
         item_name: this.data.keystr,
         page: this.data.num,
-        size: 2,
+        size: 5,
       },
       success:function(res){
         that.setData({
           list1: res.data.data.current_data
         })
-        console.log(that.data.list1)
         for (let index=0; index < that.data.list1.length; index++) {
-          console.log(that.data.list1[index].join_time)
           var a=that.data.list1[index].join_time;
           var a1=a.replaceAll('"','')
           var a2=a1.replaceAll('[','')
@@ -143,7 +137,6 @@ Page({
           var b =a3.split(',')
           var c = b[0]+' - '+b[1]
           that.data.list1[index].join_time = c
-          console.log(that.data.list1)
          }
         that.setData({
           list: that.data.list.concat(that.data.list1)
@@ -194,8 +187,5 @@ Page({
         index: e.detail.value
       })
     },
-    onLoad(){
-      this.getLocation()
-    }
 
 })

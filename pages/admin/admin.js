@@ -86,7 +86,7 @@ Page({
         org_name: this.data.orgName,
         org_id: this.data.orgId,
         item_name: this.data.name,
-        address: this.data.address,
+        address: this.data.region,
         course: this.data.course,
         grade: this.data.grade,
         need_num: this.data.number,

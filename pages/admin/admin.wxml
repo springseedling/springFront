@@ -9,51 +9,12 @@
     placeholder="请输入名称"
     label="• 组织名称"
   />
-  <van-field
-    model:value="{{ joinTime }}"
-    placeholder="（例如3月2日-4月10日）"
-    label="• 报名时间"
-  />
-  <view>
-<van-cell title="• 报名日期 >" value="{{ date1 }}" bind:click="onDisplay1" />
-<van-calendar
-  show="{{ show1 }}"
-  type="range"
-  bind:close="onClose1"
-  bind:confirm="onConfirm1"
-/></view>
-  <van-field
-    model:value="{{ actTime }}"
-    placeholder="（例如4月20日-5月10日）"
-    label="• 支教时间"
-  />
-  <view>
-<van-cell title="• 支教日期 >" value="{{ date2 }}" bind:click="onDisplay2" />
-<van-calendar
-  show="{{ show2 }}"
-  type="range"
-  bind:close="onClose2"
-  bind:confirm="onConfirm2"
-/></view>
+
   <van-field
     model:value="{{ name }}"
     label="• 项目名称"
     placeholder="请输入项目名称"
   />
-
-  <van-field
-    model:value="{{ address }}"
-    label="• 项目地区"
-    placeholder="请输入详细地址（省市县区）"
-  />
-  <view class="district">
-  <picker mode="region" bindchange="bindRegionChange">
-    <view class="picker">
-      <input value="• 支教地区 >      {{region[0]}}{{region[1]}}{{region[2]}}" class="input">
-      </input>
-    </view>
-  </picker>
-</view>
 
   <van-field
     model:value="{{ course }}"
@@ -85,6 +46,31 @@
     label="• 活动简介"
     placeholder="请输入支教活动简介"
   />
+  <view>
+<van-cell title="• 报名日期 >" value="{{ date1 }}" bind:click="onDisplay1" />
+<van-calendar
+  show="{{ show1 }}"
+  type="range"
+  bind:close="onClose1"
+  bind:confirm="onConfirm1"
+/></view>
+  <view>
+<van-cell title="• 支教日期 >" value="{{ date2 }}" bind:click="onDisplay2" />
+<van-calendar
+  show="{{ show2 }}"
+  type="range"
+  bind:close="onClose2"
+  bind:confirm="onConfirm2"
+/></view>
+
+<view class="district">
+  <picker mode="region" bindchange="bindRegionChange">
+    <view class="picker">
+      <input value="• 支教地区 >      {{region}}" class="input">
+      </input>
+    </view>
+  </picker>
+</view>
 </van-cell-group>
 <!-- <image style="height:80px;width:80px;margin;margin:10px" bindtap="upload" src="../../../../img/0.jpg">上传封面图片</image> -->
 <image style="height:80px;width:80px;margin:10px" bindtap="upload" src="{{image[0]}}" data-id="0"></image>

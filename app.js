@@ -21,7 +21,6 @@ App({
               code: res.code
             },
           success:function(res2){
-            console.log(res2.data.data.sessionId)
             wx.setStorageSync('sessionId', res2.data.data.sessionId)
           }
         })
