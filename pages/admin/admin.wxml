@@ -82,3 +82,4 @@
 <view style="margin:10px">
 <van-button type="warning" bindtap="list" class="list">查看活动列表</van-button>
 </view>
+

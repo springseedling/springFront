@@ -61,7 +61,7 @@
   url="/pages/info/info"
 />
 </view>
-<view style="margin:10px 30px">
+<view style="margin:30px 30px">
 <van-button plain type="primary" bindtap="out">退出登录</van-button>
 </view>
 </view>

@@ -1,0 +1,83 @@
+.map{
+  width: 100vw;
+  height: 100vh;
+}
+
+.map-page{
+  position: relative;
+}
+
+.map-page .current-location-icon{
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  right: 64rpx;
+  bottom: 70rpx;  
+  border-radius: 50%;
+  background-color: white;
+}
+
+.search-input{
+  position: absolute;
+  top: 72rpx;
+  left: 24rpx;
+  width: 495rpx;
+  height: 50rpx;
+  border-radius: 22rpx;
+  align-items: center;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+ 
+.search-input .search-icon{
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 22rpx;
+  margin-right: 20rpx;
+}
+
+.search-input input{
+  font-size: 24rpx;
+  flex: 1
+}
+
+.search-input .placeholder{
+  font-size: 24rpx;
+}
+
+.search-input .clear-icon{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 22rpx
+}
+
+.marker-classification-area{
+  position: absolute;
+  top: 144rpx;
+  left: 24rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.marker-classification{
+  display: flex;
+  flex-direction: row;
+  width: 180rpx;
+  height: 50rpx;
+  background-color: white;
+  border-radius: 25rpx;
+  align-items: center;
+}
+
+.marker-classification .icon{
+  width: 38rpx;
+  height: 38rpx;
+  margin-left: 18rpx;
+  margin-right: 5rpx;
+}
+
+.marker-classification .title{
+  font-size: 24rpx;
+}

@@ -1,0 +1,22 @@
+<view class="map-page">
+<map
+  id="myMap"
+  class="map"
+  latitude="{{latitude}}"
+  longitude="{{longitude}}"
+  markers="{{markers}}"
+  show-location="true"
+></map>
+<image class="current-location-icon" src="../pic/mapcenter.png" bindtap="onCurrentLocationClick"></image>
+<view class="search-input">
+<image class="search-icon" src="../pic/search.png"></image>
+<input type="text" placeholder="搜索" placeholder-class="placeholder" bindinput="onInput" model:value="{{value}}"></input>
+<image wx:if="{{isClearable}}" class="clear-icon" bindtap="onClear" src="../pic/clear.png"></image>
+</view> 
+<view class="marker-classification-area">
+<view class="marker-classification">
+<image class="icon" src="../pic/group.png"></image>
+<view class="title">支教组织</view>
+</view>
+</view>
+</view>

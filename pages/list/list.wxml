@@ -50,3 +50,11 @@
     </view>
 </view>
 </view>
+
+<view style="position:fixed;bottom:550rpx;left:41%;color:green" wx:if="{{load}}">
+<van-loading type="spinner" color="green" />
+<view style="position:fixed;bottom:500rpx;left:39%;color:green">
+定位中...
+</view>
+</view>
+

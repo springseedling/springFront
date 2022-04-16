@@ -14,7 +14,8 @@
     "pages/admin/admin",
     "pages/list/list",
     "pages/actDesc/actDesc",
-    "pages/sign/sign"
+    "pages/sign/sign",
+    "pages/map/map"
   ],
   "permission": {
     "scope.userLocation": {
@@ -34,6 +35,12 @@
         "text": "首页",
         "iconPath": "./pages/pic/index.png",
         "selectedIconPath": "./pages/pic/index1.png"
+      },
+      {
+        "pagePath": "pages/map/map",
+        "text": "地图",
+        "iconPath": "./pages/pic/map.png",
+        "selectedIconPath": "./pages/pic/map1.png"
       },
       {
         "pagePath": "pages/admin/admin",
@@ -64,7 +71,9 @@
     "van-radio-group": "@vant/weapp/radio-group/index",
     "van-row": "@vant/weapp/row/index",
     "van-col": "@vant/weapp/col/index",
-    "van-calendar": "@vant/weapp/calendar/index"
+    "van-calendar": "@vant/weapp/calendar/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "van-rate": "@vant/weapp/rate/index"
   },
   "sitemapLocation": "sitemap.json"
 }

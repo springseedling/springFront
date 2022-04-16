@@ -11,3 +11,14 @@
 .van-card {
   margin: 5px 0;
 }
+.swiper{
+  width: 100%;
+  height: 85vh;
+}
+swiper{
+  height: 100%;
+}
+.swiper image{
+  height: 100%;
+  width: 100%;
+}

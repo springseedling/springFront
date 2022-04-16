@@ -47,6 +47,12 @@
           "pathName": "pages/list/list",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "地图",
+          "pathName": "pages/map/map",
+          "query": "",
+          "scene": null
         }
       ]
     }

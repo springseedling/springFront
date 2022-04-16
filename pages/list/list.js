@@ -12,6 +12,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    load: 1,
     address: '',
     datus: '',
     list1: [],
@@ -46,39 +47,9 @@ Page({
     this.getLocation()
     var that = this
     setTimeout(function () {
-      wx.request({
-        url: 'http://localhost:8080/org/page',
-        data:{
-          item_name: that.data.keystr,
-          page: 1,
-          size: 5,
-          address: that.data.region,
-          status: that.data.datus
-        },
-        success:function(res){
-          that.setData({
-            list1: res.data.data.current_data
-          })
-          for (let index=0; index < that.data.list1.length; index++) {
-            var a=that.data.list1[index].join_time;
-            var a1=a.replaceAll('"','')
-            var a2=a1.replaceAll('[','')
-            var a3=a2.replaceAll(']','')
-            var b =a3.split(',')
-            var c = b[0]+' - '+b[1]
-            that.data.list1[index].join_time = c
-           }
-           that.setData({
-             list: that.data.list1
-           })
-          // var a=res.data.data.current_data[10].join_time;
-          // var a1=a.replaceAll('"','')
-          // var a2=a1.replaceAll('[','')
-          // var a3=a2.replaceAll(']','')
-          // var b =a3.split(',')
-          // console.log(b[0]+' - '+b[1])
-          // console.log(res.data.data.current_data[10].join_time.replaceAll('"','').replaceAll('[','').replaceAll(']','').split(',')[0]+ ' - '+res.data.data.current_data[10].join_time.replaceAll('"','').replaceAll('[','').replaceAll(']','').split(',')[1])
-        },
+      that.onShow()
+      that.setData({
+        load: 0
       })
     }, 5000)
   },
@@ -125,7 +96,7 @@ Page({
     })
     this.data.num++;
     wx.request({
-      url: 'http://localhost:8080/org/page',
+      url: 'http://192.168.171.168:8080/org/page',
       data:{
         item_name: this.data.keystr,
         page: this.data.num,
@@ -203,7 +174,7 @@ Page({
     onShow(){
       var that = this
         wx.request({
-          url: 'http://localhost:8080/org/page',
+          url: 'http://192.168.171.168:8080/org/page',
           data:{
             item_name: that.data.keystr,
             page: 1,

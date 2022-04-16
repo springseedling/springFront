@@ -11,7 +11,7 @@ Page({
   onShow(){
     var that = this
     wx.request({
-      url: 'http://localhost:8080/org/getALById',
+      url: 'http://192.168.171.168:8080/org/getALById',
       data:{
         id: wx.getStorageSync('id')
       },

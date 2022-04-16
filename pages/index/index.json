@@ -7,5 +7,6 @@
     "van-cell-group": "@vant/weapp/cell-group/index",
     "van-switch": "@vant/weapp/switch/index"
   },
-  "navigationBarTitleText": "春禾支教"
+  "navigationBarTitleText": "春禾支教",
+  "navigationStyle": "custom"
 }

@@ -61,7 +61,7 @@ Page({
     //   }
     // })
     wx.request({
-      url: 'http://localhost:8080/role/signIn',
+      url: 'http://192.168.171.168:8080/role/signIn',
       data:{
         username: this.data.username,
         password: this.data.password
@@ -72,7 +72,7 @@ Page({
           desc: '用于信息完善',
           success(res){
           wx.request({
-            url: 'http://localhost:8080/login/authLogin',
+            url: 'http://192.168.171.168:8080/login/authLogin',
             data:{
               encryptedData: res.encryptedData,
               iv: res.iv,
