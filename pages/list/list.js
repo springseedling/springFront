@@ -12,6 +12,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    begin: 0,
     load: 1,
     address: '',
     datus: '',
@@ -44,15 +45,28 @@ Page({
     num: 1,
   },
   onLoad(){
-    this.getLocation()
+    this.getLocation();
+  },
+   onReady(){
     var that = this
+  //   console.log(this.data.region=='')
+  for(var i=1;i<=200;i++){
     setTimeout(function () {
+      if(that.data.region!=''&&that.data.begin==0){
       that.onShow()
       that.setData({
-        load: 0
-      })
-    }, 5000)
-  },
+        load: 0,
+        begin: 1
+      })}
+    }, i*100)
+  }
+},
+  // setTimeout(function () {
+  //   that.onShow()
+  //   that.setData({
+  //     load: 0
+  //   })
+  // }, 5000)
   click:function(e){
     wx.navigateTo({
       url: '../actDesc/actDesc',

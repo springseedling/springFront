@@ -178,11 +178,7 @@ Page({
   if(z[1].length==4){
     that.data.join_end = z[1]
   }
-  
-    this.setData({
-      join_start: z[0],
-      join_end: z[1]
-    })
+
     const b= a.replaceAll('/','月')
     var b1 = b.split(' ');
     var b2 = b1[0].slice(0,10) + "日" + b1[0].slice(10)
