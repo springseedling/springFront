@@ -1,0 +1,46 @@
+<view class="card">
+        <view class="event-title">
+            <view class="title">活动详情</view>
+        </view>
+        <view class="event-detail">
+            <view class="title">名称:</view>
+            <view class="title">{{actInfo.item_name}}</view>
+        </view>
+        <view class="event-detail">
+            <view class="title">地点:</view>
+            <view class="title">{{actInfo.address}}</view>
+        </view>
+        <view class="event-detail">
+            <view class="title">时间:</view>
+            <view class="title">{{actInfo.join_time}}</view>
+        </view>
+        <view class="event-detail">
+            <view class="title">详情:</view>
+            <view class="title">{{actInfo.act_profile}}</view>
+        </view>
+    </view>
+    <view class="card">
+            <view class="cu-form-group" style="border-top: 0">
+                <view class="title" style="color: #000;font-size: 30rpx;font-weight: 700">报名信息
+                </view>
+            </view>
+            <view class="cu-form-group">
+                <view class="title">姓名:</view>
+                <input bindinput="nameInput" name="name" value="{{stuInfo.stu_name}}" ></input>
+            </view>
+            <view class="cu-form-group">
+                <view class="title">学校:</view>
+                <input bindinput="schoolInput" name="school" value="{{stuInfo.stu_school}}"></input>
+            </view>
+            <view class="cu-form-group">
+                <view class="title">擅长科目:</view>
+                <input bindinput="subjectInput" name="subject" value="{{stuInfo.stu_subject}}"></input>
+            </view>
+            <view class="cu-form-group">
+                <view class="title">联系方式:</view>
+                <input bindinput="numberInput" name="number" value="{{stuInfo.stu_phone}}"></input>
+            </view>
+            <view class="buttonField">
+                <button form-type="submit" class="button" bindtap="enter"><view style="font-size:12px">提交</view></button>
+            </view>
+      </view>

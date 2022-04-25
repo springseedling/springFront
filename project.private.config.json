@@ -37,13 +37,13 @@
           "scene": null
         },
         {
-          "name": "pages/admin/admin",
+          "name": "管理",
           "pathName": "pages/admin/admin",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/list/list",
+          "name": "列表",
           "pathName": "pages/list/list",
           "query": "",
           "scene": null
@@ -51,6 +51,24 @@
         {
           "name": "地图",
           "pathName": "pages/map/map",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "审核",
+          "pathName": "pages/check/check",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "报名",
+          "pathName": "pages/enter/enter",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "活动详情",
+          "pathName": "pages/actDesc/actDesc",
           "query": "",
           "scene": null
         }

@@ -61,25 +61,30 @@ Page({
     //   }
     // })
     wx.request({
-      url: 'http://192.168.171.168:8080/role/signIn',
+      url: 'http://localhost:8080/role/signIn',
       data:{
         username: this.data.username,
         password: this.data.password
       },
       success:function(res){
+        var a = res.data.data
+        console.log("uid: "+a.uid)
+        console.log("role: "+a.role)
+        wx.setStorageSync('role', a.role)
+        wx.setStorageSync('uid', a.uid)
         if(res.data.code==0){
         wx.getUserInfo({
           desc: '用于信息完善',
           success(res){
           wx.request({
-            url: 'http://192.168.171.168:8080/login/authLogin',
+            url: 'http://localhost:8080/login/authLogin',
             data:{
               encryptedData: res.encryptedData,
               iv: res.iv,
               sessionId: wx.getStorageSync('sessionId')
             },
             success:function(res2){
-              console.log(res2)
+              console.log("token: "+res2.data.data.token)
               // app.globalData.token=res2.data.data.token
               wx.setStorageSync('token', res2.data.data.token)
             }

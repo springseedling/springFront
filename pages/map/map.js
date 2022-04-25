@@ -4,7 +4,11 @@ Page({
     value: '',
     isClearable: false,
    markers: [
-     {latitude:34.720482, longitude:113.621643, iconPath: '../pic/group.png', width:25, height:25}
+     {latitude:34.720482, longitude:113.621643, iconPath: '../pic/group.png', width:25, height:25, title:'支教组织'},
+     {latitude:34.782502, longitude:113.664864, iconPath: '../pic/group.png', width:25, height:25, title:'支教组织'},
+     {latitude:34.745113, longitude:113.625333, iconPath: '../pic/group.png', width:25, height:25, title:'支教组织'},
+     {latitude:34.747355, longitude:113.623786, iconPath: '../pic/group.png', width:25, height:25, title:'支教组织'},
+     {latitude:34.744508, longitude:113.623223, iconPath: '../pic/group.png', width:25, height:25, title:'支教组织'}
    ]
   },
 
@@ -42,6 +46,9 @@ Page({
       isClearable: false,
       value: ''
     })
+  },
+  markertap(){
+    console.log(1)
   }
   
 })

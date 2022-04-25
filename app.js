@@ -16,7 +16,7 @@ App({
       success: res => {
         if(res.code){
           wx.request({
-            url: 'http://192.168.171.168:8080/login/getSessionId',
+            url: 'http://localhost:8080/login/getSessionId',
             data:{
               code: res.code
             },
@@ -26,7 +26,7 @@ App({
         })
         if(wx.getStorageSync('token')!=''){
           wx.request({
-          url: 'http://192.168.171.168:8080/login/authToken',
+          url: 'http://localhost:8080/login/authToken',
           header:{
             'Authorization': wx.getStorageSync('token')
           },

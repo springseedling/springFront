@@ -19,7 +19,7 @@
 
 .search-input{
   position: absolute;
-  top: 72rpx;
+  top: 83rpx;
   left: 24rpx;
   width: 495rpx;
   height: 50rpx;
@@ -55,7 +55,7 @@
 
 .marker-classification-area{
   position: absolute;
-  top: 144rpx;
+  top: 154rpx;
   left: 24rpx;
   display: flex;
   flex-direction: row;

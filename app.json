@@ -15,7 +15,10 @@
     "pages/list/list",
     "pages/actDesc/actDesc",
     "pages/sign/sign",
-    "pages/map/map"
+    "pages/map/map",
+    "pages/check/check",
+    "pages/checkInfo/checkInfo",
+    "pages/enter/enter"
   ],
   "permission": {
     "scope.userLocation": {
@@ -73,7 +76,8 @@
     "van-col": "@vant/weapp/col/index",
     "van-calendar": "@vant/weapp/calendar/index",
     "van-loading": "@vant/weapp/loading/index",
-    "van-rate": "@vant/weapp/rate/index"
+    "van-rate": "@vant/weapp/rate/index",
+    "van-progress": "@vant/weapp/progress/index"
   },
   "sitemapLocation": "sitemap.json"
 }

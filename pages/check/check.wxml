@@ -1,0 +1,63 @@
+<view class="page">
+    <view class="swiper">
+    <view wx:if="{{swiperItems==''}}" style="text-align:center;margin-top:50px">没有待审核记录，休息一下吧！</view>
+    <image wx:if="{{swiperItems==''}}"></image>
+    <view wx:if="{{swiperItems!=''}}" style="margin:20px 20px 5px"><van-progress percentage="{{percentage}}" /></view>
+    <swiper autoplay="{{autoplay}}" interval="100">
+      <swiper-item wx:for="{{swiperItems}}" wx:key="index" wx:for-item="items">
+        <view class="card">
+        <view class="event-title">
+            <view class="title">活动详情</view>
+        </view>
+        <view class="event-detail">
+            <view class="title">名称:</view>
+            <view class="title">{{items.activity.item_name}}</view>
+        </view>
+        <view class="event-detail">
+            <view class="title">地点:</view>
+            <view class="title">{{items.activity.address}}</view>
+        </view>
+        <view class="event-detail">
+            <view class="title">时间:</view>
+            <view class="title">{{items.activity.join_time}}</view>
+        </view>
+        <view class="event-detail">
+            <view class="title">详情:</view>
+            <view class="title">{{items.activity.act_profile}}</view>
+        </view>
+    </view>
+    <view class="card">
+            <view class="cu-form-group" style="border-top: 0">
+                <view class="title" style="color: #000;font-size: 30rpx;font-weight: 700">报名信息
+                </view>
+            </view>
+            <view class="cu-form-group">
+                <view class="title">姓名:</view>
+                <input bindinput="nameInput" name="name" value="{{items.stu.stu_name}}" ></input>
+            </view>
+            <view class="cu-form-group">
+                <view class="title">学校:</view>
+                <input bindinput="schoolInput" name="school" value="{{items.stu.stu_school}}"></input>
+            </view>
+            <view class="cu-form-group">
+                <view class="title">擅长科目:</view>
+                <input bindinput="subjectInput" name="subject" value="{{items.stu.stu_subject}}"></input>
+            </view>
+            <view class="cu-form-group">
+                <view class="title">联系方式:</view>
+                <input bindinput="numberInput" name="number" value="{{items.stu.stu_phone}}"></input>
+            </view>
+      </view>
+      <view class="check">
+      <view class="back">
+      <van-button color="linear-gradient(to right, orange, red)" round="true" bindtap="back">审核驳回</van-button>
+    </view>
+    <view class="go">
+      <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)" round="true" bindtap="go">审核通过</van-button>
+    </view>
+  </view>
+      </swiper-item>
+      </swiper>
+    </view>
+  </view>
+

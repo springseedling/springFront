@@ -110,7 +110,7 @@ Page({
     })
     this.data.num++;
     wx.request({
-      url: 'http://192.168.171.168:8080/org/page',
+      url: 'http://localhost:8080/org/page',
       data:{
         item_name: this.data.keystr,
         page: this.data.num,
@@ -188,7 +188,7 @@ Page({
     onShow(){
       var that = this
         wx.request({
-          url: 'http://192.168.171.168:8080/org/page',
+          url: 'http://localhost:8080/org/page',
           data:{
             item_name: that.data.keystr,
             page: 1,

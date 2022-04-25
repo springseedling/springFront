@@ -6,6 +6,7 @@
   longitude="{{longitude}}"
   markers="{{markers}}"
   show-location="true"
+  bindmarkertap="markertap"
 ></map>
 <image class="current-location-icon" src="../pic/mapcenter.png" bindtap="onCurrentLocationClick"></image>
 <view class="search-input">

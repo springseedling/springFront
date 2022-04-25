@@ -48,4 +48,4 @@
                 <view class="titlea">{{onelist.release_time}}</view>
             </view>
 </view>
-<button type="primary" style="margin: 0 5px">我要报名</button>
+<button type="primary" style="margin: 5px 5px;" bindtap="enter"><view style="font-size:14px">我要报名</view></button>

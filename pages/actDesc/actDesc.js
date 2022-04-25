@@ -11,7 +11,7 @@ Page({
   onShow(){
     var that = this
     wx.request({
-      url: 'http://192.168.171.168:8080/org/getALById',
+      url: 'http://localhost:8080/org/getALById',
       data:{
         id: wx.getStorageSync('id')
       },
@@ -40,6 +40,14 @@ Page({
         })
       }
 
+    })
+  },
+  enter(){
+    wx.navigateTo({
+      url: '../enter/enter?'+'item_name='+this.data.onelist.item_name
+      +'&address='+this.data.onelist.address+'&join_time='+
+      this.data.onelist.join_time+'&act_profile='+this.data.onelist.act_profile
+      +'&item_id='+this.data.onelist.item_id+'&org_id='+this.data.onelist.org_id
     })
   }
 })

@@ -60,6 +60,18 @@
   link-type="navigateTo"
   url="/pages/info/info"
 />
+<van-cell
+  is-link
+  title="学生审核"
+  link-type="navigateTo"
+  url="/pages/check/check"
+/>
+<van-cell
+  is-link
+  title="管理审核信息"
+  link-type="navigateTo"
+  url="/pages/checkInfo/checkInfo"
+/>
 </view>
 <view style="margin:30px 30px">
 <van-button plain type="primary" bindtap="out">退出登录</van-button>
