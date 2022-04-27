@@ -40,6 +40,12 @@
 <!-- 学生展开 -->
 <view wx:if="{{active1}}">
   <van-collapse-item title="学生操作" name="学生">
+    <van-cell
+  is-link
+  title="我的报名"
+  link-type="navigateTo"
+  url="/pages/myAct/myAct"
+/>
   <van-cell
   is-link
   title="使用帮助"

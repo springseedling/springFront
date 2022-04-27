@@ -83,6 +83,12 @@
           "pathName": "pages/formDesc/formDesc",
           "query": "item_id=3",
           "scene": null
+        },
+        {
+          "name": "我的报名",
+          "pathName": "pages/myAct/myAct",
+          "query": "",
+          "scene": null
         }
       ]
     }

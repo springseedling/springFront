@@ -20,7 +20,8 @@
     "pages/checkInfo/checkInfo",
     "pages/enter/enter",
     "pages/formDesc/formDesc",
-    "pages/updateAct/updateAct"
+    "pages/updateAct/updateAct",
+    "pages/myAct/myAct"
   ],
   "permission": {
     "scope.userLocation": {

@@ -1,6 +1,8 @@
 Page({
 
   data: {
+    onelist1:[],
+    origin:[],
     radio: '1',
     signTimeActive: '',
     showView: true,
@@ -61,7 +63,30 @@ Page({
           },
           success:function(res){
             that.setData({
-              listone: res.data
+              origin0:{
+                join_time: res.data.join_time,
+                act_time: res.data.act_time,
+                address: res.data.address
+              }
+            })
+            that.setData({
+              onelist1: res.data,
+            })
+            var a = that.data.onelist1.join_time;
+            var b = a.replaceAll('[','').replaceAll(']','').replaceAll('"','')
+            var c = b.split(",")
+            that.data.onelist1.join_time =c[0]+' - '+c[1]
+            var a1 = that.data.onelist1.act_time;
+            var b1 = a1.replaceAll('[','').replaceAll(']','').replaceAll('"','')
+            var c1 = b1.split(",")
+            that.data.onelist1.act_time = c1[0]+' - '+c1[1]
+            var a2 = that.data.onelist1.address;
+            var b2 = a2.replaceAll('[','').replaceAll(']','').replaceAll('"','')
+            var c2 = b2.split(",")
+            that.data.onelist1.address = c2[0]+' '+c2[1]+' '+c2[2]
+            that.setData({
+              listone: that.data.onelist1,
+              origin: that.data.onelist1
             })
           }
         })
@@ -86,14 +111,24 @@ Page({
           },
           success:function(res){
             that.setData({
-              list: res.data.data
+              list:res.data.data
             })
           }
         })
       },
       orgEdit(){
         wx.navigateTo({
-          url: '../updateAct/updateAct',
+          url: '../updateAct/updateAct?item_id='+this.options.item_id
+          +'&course='+this.data.origin.course
+          +'&address='+this.data.origin.address+
+          '&grade='+this.data.origin.grade+
+          '&act_time='+this.data.origin.act_time+
+          '&join_time='+this.data.origin.join_time+
+          '&need_num='+this.data.origin.need_num+
+          '&act_profile='+this.data.origin.act_profile+
+          '&act_time0='+this.data.origin0.act_time+
+          '&join_time0='+this.data.origin0.join_time+
+          '&address0='+this.data.origin0.address
         })
       },
       stuEdit(){

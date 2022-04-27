@@ -1,22 +1,5 @@
 <van-cell-group>
   <van-field
-    model:value="{{ orgId }}"
-    placeholder="请输入id"
-    label="• 支教组织id"
-  />
-  <van-field
-    model:value="{{orgName}}"
-    placeholder="请输入名称"
-    label="• 组织名称"
-  />
-
-  <van-field
-    model:value="{{ name }}"
-    label="• 项目名称"
-    placeholder="请输入项目名称"
-  />
-
-  <van-field
     model:value="{{ course }}"
     label="• 教学科目"
     placeholder="请输入教学科目"
@@ -30,16 +13,6 @@
     model:value="{{ number }}"
     label="• 需求人数"
     placeholder="请输入需求人数"
-  />
-  <van-field
-    model:value="{{ numberd }}"
-    label="• 已报名人数"
-    placeholder="请输入已报名人数"
-  />
-  <van-field
-    model:value="{{ org_profile }}"
-    label="• 组织简介"
-    placeholder="请输入支教组织简介"
   />
   <van-field
     model:value="{{ act_profile}}"
@@ -66,20 +39,16 @@
 <view class="district">
   <picker mode="region" bindchange="bindRegionChange">
     <view class="picker">
-      <input value="• 支教地区 >      {{region}}" class="input">
+      <input value="• 支教地区 >      {{region1}}" class="input">
       </input>
     </view>
   </picker>
 </view>
 </van-cell-group>
-<!-- <image style="height:80px;width:80px;margin;margin:10px" bindtap="upload" src="../../../../img/0.jpg">上传封面图片</image> -->
-<image style="height:80px;width:80px;margin:10px" bindtap="upload" src="{{image[0]}}" data-id="0"></image>
-<image style="height:80px;width:80px;margin:10px" bindtap="upload" src="{{image[1]}}" wx:if="{{i>0}}" data-id="1"></image>
-<image style="height:80px;width:80px;margin:10px" bindtap="upload" src="{{image[2]}}" wx:if="{{i>1}}" data-id="2"></image>
 <view style="margin:10px">
-<van-button type="primary"  bindtap="commit" class="commit">发布</van-button>
+<van-button type="primary"  bindtap="commit" class="commit">修改</van-button>
 </view>
 <view style="margin:10px">
-<van-button type="warning" bindtap="list" class="list">查看活动列表</van-button>
+<van-button type="warning" bindtap="list" class="list">删除</van-button>
 </view>
 

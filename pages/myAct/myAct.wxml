@@ -1,0 +1,80 @@
+<van-tabs animated color="#59e670" title-active-color="#59e670" bind:click="onClick">
+  <van-tab title="待审核">
+    <view style="margin-top:20px">
+<view class="card-box" id2="getheight">
+    <view class="card" data-id="{{item.item_id}}" wx:for="{{list}}" wx:for-item="item" wx:key="key" bindtap="click">
+        <view class="inner">
+            <view class="card-header">
+                <image class="card-image" src="{{item.img}}"></image>
+            </view>
+            <view class="card-main">
+                <view class="card-title card-col">
+                    <text>{{item.item_name}}</text>
+                </view>
+                <view class="card-detail card-col">
+                    <view class="card-price">{{item.org_profile}}</view>
+                    <view class="card-views">招募人数：{{item.need_num}}</view>
+                </view>
+                <view class="card-desc card-col">
+                    <text>报名日期：{{item.join_time}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+</view>
+  </van-tab>
+
+
+  <van-tab title="已通过">
+    <view style="margin-top:20px">
+<view class="card-box" id2="getheight">
+    <view class="card" data-id="{{item.item_id}}" wx:for="{{list}}" wx:for-item="item" wx:key="key" bindtap="click">
+        <view class="inner">
+            <view class="card-header">
+                <image class="card-image" src="{{item.img}}"></image>
+            </view>
+            <view class="card-main">
+                <view class="card-title card-col">
+                    <text>{{item.item_name}}</text>
+                </view>
+                <view class="card-detail card-col">
+                    <view class="card-price">{{item.org_profile}}</view>
+                    <view class="card-views">招募人数：{{item.need_num}}</view>
+                </view>
+                <view class="card-desc card-col">
+                    <text>报名日期：{{item.join_time}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+</view>
+  
+  </van-tab>
+  <van-tab title="已驳回">
+    <view style="margin-top:20px">
+<view class="card-box" id2="getheight">
+    <view class="card" data-id="{{item.item_id}}" wx:for="{{list}}" wx:for-item="item" wx:key="key" bindtap="click">
+        <view class="inner">
+            <view class="card-header">
+                <image class="card-image" src="{{item.img}}"></image>
+            </view>
+            <view class="card-main">
+                <view class="card-title card-col">
+                    <text>{{item.item_name}}</text>
+                </view>
+                <view class="card-detail card-col">
+                    <view class="card-price">{{item.org_profile}}</view>
+                    <view class="card-views">招募人数：{{item.need_num}}</view>
+                </view>
+                <view class="card-desc card-col">
+                    <text>报名日期：{{item.join_time}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+</view>
+  </van-tab>
+</van-tabs>
