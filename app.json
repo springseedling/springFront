@@ -18,7 +18,9 @@
     "pages/map/map",
     "pages/check/check",
     "pages/checkInfo/checkInfo",
-    "pages/enter/enter"
+    "pages/enter/enter",
+    "pages/formDesc/formDesc",
+    "pages/updateAct/updateAct"
   ],
   "permission": {
     "scope.userLocation": {
@@ -77,7 +79,14 @@
     "van-calendar": "@vant/weapp/calendar/index",
     "van-loading": "@vant/weapp/loading/index",
     "van-rate": "@vant/weapp/rate/index",
-    "van-progress": "@vant/weapp/progress/index"
+    "van-progress": "@vant/weapp/progress/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-collapse": "@vant/weapp/collapse/index",
+    "van-collapse-item": "@vant/weapp/collapse-item/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
   },
   "sitemapLocation": "sitemap.json"
 }

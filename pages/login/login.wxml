@@ -36,6 +36,56 @@
   <van-cell title="角色" value="{{user.role}}"/>
 </van-cell-group>
 <view style="margin:10px 0px;">
+<van-collapse value="{{ activeNames }}" bind:change="onChange">
+<!-- 学生展开 -->
+<view wx:if="{{active1}}">
+  <van-collapse-item title="学生操作" name="学生">
+  <van-cell
+  is-link
+  title="使用帮助"
+  link-type="navigateTo"
+  url="/pages/help/help"
+/>
+<van-cell
+  is-link
+  title="联系客服"
+  link-type="navigateTo"
+  url="/pages/contact/contact"
+/>
+  </van-collapse-item>
+</view>
+<!-- 学生禁用 -->
+<view wx:if="{{!active1}}">
+  <van-collapse-item title="学生操作" name="学生" disabled>
+  <van-cell
+  is-link
+  title="使用帮助"
+  link-type="navigateTo"
+  url="/pages/help/help"
+/>
+<van-cell
+  is-link
+  title="联系客服"
+  link-type="navigateTo"
+  url="/pages/contact/contact"
+/>
+  </van-collapse-item>
+</view>
+<!-- 支教组织展开 -->
+<view wx:if="{{active2}}">
+  <van-collapse-item title="支教组织操作" name="支教组织">
+  <van-cell
+  is-link
+  title="学生审核"
+  link-type="navigateTo"
+  url="/pages/check/check"
+/>
+<van-cell
+  is-link
+  title="管理审核信息"
+  link-type="navigateTo"
+  url="/pages/checkInfo/checkInfo"
+/>
 <van-cell
   is-link
   title="使用帮助"
@@ -48,19 +98,12 @@
   link-type="navigateTo"
   url="/pages/contact/contact"
 />
-<van-cell
-  is-link
-  title="查看所有报名"
-  link-type="navigateTo"
-  url="/pages/find/find"
-/>
-<van-cell
-  is-link
-  title="管理报名信息"
-  link-type="navigateTo"
-  url="/pages/info/info"
-/>
-<van-cell
+  </van-collapse-item>
+</view>
+<!-- 支教组织禁用 -->
+<view wx:if="{{!active2}}">
+  <van-collapse-item title="支教组织操作" name="支教组织" disabled>
+  <van-cell
   is-link
   title="学生审核"
   link-type="navigateTo"
@@ -72,6 +115,55 @@
   link-type="navigateTo"
   url="/pages/checkInfo/checkInfo"
 />
+<van-cell
+  is-link
+  title="使用帮助"
+  link-type="navigateTo"
+  url="/pages/help/help"
+/>
+<van-cell
+  is-link
+  title="联系客服"
+  link-type="navigateTo"
+  url="/pages/contact/contact"
+/>
+  </van-collapse-item>
+</view>
+<!-- 管理员展开 -->
+<view wx:if="{{active3}}">
+  <van-collapse-item title="管理员操作" name="管理员">
+    <van-cell
+  is-link
+  title="查看所有报名"
+  link-type="navigateTo"
+  url="/pages/find/find"
+/>
+<van-cell
+  is-link
+  title="管理报名信息"
+  link-type="navigateTo"
+  url="/pages/info/info"
+/>
+  </van-collapse-item>
+</view>
+<!-- 管理员禁用 -->
+<view wx:if="{{!active3}}">
+  <van-collapse-item title="管理员操作" name="管理员" disabled>
+    <van-cell
+  is-link
+  title="查看所有报名"
+  link-type="navigateTo"
+  url="/pages/find/find"
+/>
+<van-cell
+  is-link
+  title="管理报名信息"
+  link-type="navigateTo"
+  url="/pages/info/info"
+/>
+  </van-collapse-item>
+</view>
+</van-collapse>
 </view>
 <view style="margin:30px 30px">
 <van-button plain type="primary" bindtap="out">退出登录</van-button>

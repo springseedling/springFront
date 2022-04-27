@@ -1,66 +1,50 @@
-// pages/checkInfo/checkInfo.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    height: 881.8,
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onChange0(e){
+    this.setData({
+      search: e.detail
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  edit(e){
+    wx.navigateTo({
+      url: '../formDesc/formDesc?item_id='+e.currentTarget.dataset.id,
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  onShow(){
+    var that =this
+    wx.request({
+      url: 'http://localhost:8080/org/getActList',
+      method: "GET",
+      data:{
+        org_id: wx.getStorageSync('uid')
+      },
+      success:function(res){
+        if(res.data.length<9){
+          var a = 881.8/9*res.data.length+10
+        }
+        that.setData({
+          list: res.data,
+          height: a
+        })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onClick(){
+    var that = this
+    wx.request({
+      url: 'http://localhost:8080/org/getALByName',
+      method: "GET",
+      data:{
+        item_name: this.data.search
+      },
+      success:function(res){
+        console.log(res)
+        that.setData({
+          list:res.data
+        })
+      }
+    })
   }
 })

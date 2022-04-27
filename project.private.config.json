@@ -71,6 +71,18 @@
           "pathName": "pages/actDesc/actDesc",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "审核信息",
+          "pathName": "pages/checkInfo/checkInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "表格详情",
+          "pathName": "pages/formDesc/formDesc",
+          "query": "item_id=3",
+          "scene": null
         }
       ]
     }

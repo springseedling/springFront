@@ -19,3 +19,12 @@
 .sign_bottom{
   margin:10px 22px 10px 220px;
 }
+
+.van-collapse-item__content{
+  padding: var(--collapse-item-content-padding,0px);
+  color: var(--collapse-item-content-text-color,green);
+  font-size: var(--collapse-item-content-font-size,13px);
+  line-height: var(--collapse-item-content-line-height,1.5);
+  background-color: var(--collapse-item-content-background-color,green);
+}
+

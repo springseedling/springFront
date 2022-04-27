@@ -1,0 +1,80 @@
+<van-tabs animated title-active-color="#144a9e" color="#144a9e">
+  <van-tab title="活动管理">
+    <van-divider contentPosition="center" customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;">
+    {{listone.item_name}}
+    </van-divider>
+    <view class="info">
+    <view class="item">报名时间：{{listone.join_time}}</view>
+    <view class="item">支教时间：{{listone.act_time}}</view>
+    <view class="item">需求人数：{{listone.need_num}}</view>
+    <view class="item">支教科目：{{listone.course}}</view>
+    <view class="item">支教年级：{{listone.grade}}</view>
+    <view class="item">活动介绍：{{listone.act_profile}}</view>
+    <view class="item">支教地点：{{listone.address}}</view>
+    <view class="item">通过人数：{{listone.present_num}}</view>
+    <view class="item">发布时间：{{listone.release_time}}</view>
+  </view>
+  <button bindtap='orgEdit' class="receiveFile">编辑</button>
+  </van-tab>
+  <van-tab title="学生管理">
+    <van-dropdown-menu active-color="#19caad">
+    <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" bind:change="onChange1"/>
+  <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" bind:change="onChange2"/>
+</van-dropdown-menu>
+
+<!-- 表格 -->
+<view class="table">
+    <!-- 整体横向滑动 -->
+    <scroll-view class="tableX" scroll-x>
+        <!-- 表头 -->
+        <view class="tr">
+            <view class="th" style="width:40px;border-left: 1px solid #dadada;">{{"序号"}}</view>
+            <view class="th">{{"姓名"}}</view>
+            <view class="th">{{"学校"}}</view>
+            <view class="th">{{"擅长科目"}}</view>
+            <view class="th" style="width:120px;">{{"联系方式"}}</view>
+            <view wx:if="{{!signTimeActive}}" class="th" style="width:150px;">{{"审核时间"}}</view>
+            <view wx:if="{{signTimeActive}}" class="th" style="width:150px;">{{"报名时间"}}</view>
+            <view class="th">{{"操作"}}</view>
+        </view>
+        <!-- 内容 -->
+        <!-- 除表头外纵向滑动 -->
+        <scroll-view class="tableY" scroll-y style="height: {{height}}rpx">
+            <view class="tr" wx:for="{{list}}" wx:key="index" bindtap="edit" wx:for-item="items">
+                <view class="td" style="width:40px;border-left: 1px solid #dadada;">{{index+1}}</view>
+                <view class="td">{{items.stu.stu_name}}</view>
+                <view class="td">{{items.stu.stu_school}}</view>
+                <view class="td">{{items.stu.stu_subject}}</view>
+                <view class="td" style="width:120px;">{{items.stu.stu_phone}}</view>
+                <view class="td" style="width:150px;">{{items.sign_time}}</view>
+                <view class="td" style="padding-bottom:0;padding-top:5px">
+                  <button size="mini" bindtap='showRule' class="receiveFile" data-id="{{items.record_id}}">编辑</button>
+                </view>
+            </view>
+        </scroll-view>
+    </scroll-view>
+</view>
+  </van-tab>
+</van-tabs>
+
+<!--遮罩层-->
+<view class="ruleZhezhao {{isRuleTrue?'isRuleShow':'isRuleHide'}}">
+    <view class='ruleZhezhaoContent'>
+      <view class="inputcode">
+      <view>
+  <van-radio-group value="{{ radio }}" bind:change="onChange">
+  <view style="padding-left:40px;margin-top:25px">
+  <van-radio name="1">审核通过</van-radio>
+</view>
+<view style="padding-left:40px;margin-top:15px">
+  <van-radio name="-1">审核驳回</van-radio>
+</view>
+  </van-radio-group>
+      </view>
+      </view> 
+      <view>
+        <van-button plain round type="info" size="small" bindtap='stuEdit'>确定</van-button>
+      </view>
+      <image src='../pic/cancel.png' class='ruleHide' bindtap='hideRule'></image>
+    </view>
+  </view>

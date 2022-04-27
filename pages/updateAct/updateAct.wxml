@@ -1,5 +1,10 @@
 <van-cell-group>
   <van-field
+    model:value="{{ orgId }}"
+    placeholder="请输入id"
+    label="• 支教组织id"
+  />
+  <van-field
     model:value="{{orgName}}"
     placeholder="请输入名称"
     label="• 组织名称"
@@ -25,6 +30,11 @@
     model:value="{{ number }}"
     label="• 需求人数"
     placeholder="请输入需求人数"
+  />
+  <van-field
+    model:value="{{ numberd }}"
+    label="• 已报名人数"
+    placeholder="请输入已报名人数"
   />
   <van-field
     model:value="{{ org_profile }}"

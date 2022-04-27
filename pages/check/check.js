@@ -129,6 +129,9 @@ Page({
     wx.request({
       url: 'http://localhost:8080/org/getChecking',
       method: 'GET',
+      data:{
+        org_id: wx.getStorageSync('uid')
+      },
       success:function(res){
          that.setData({
            list1: res.data.data

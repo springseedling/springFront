@@ -1,0 +1,119 @@
+.van-dropdown-menu__item{
+  background-color: #f0fcff;
+}
+
+.receiveFile {
+  border-radius: 20px;
+  background: #fff;
+  color: #175acb;
+  border: 2rpx solid #175acb;
+  width:82%;
+}
+.dowicon{
+  width: 68px;
+  height: 68px;
+  margin-top: 50px;
+  margin:20px 117px 0px 122px;
+  text-align: center;
+}
+.inputcode{
+  padding-left: 20rpx;
+  height: 250rpx;
+  width: 78%;
+  color: #000;
+  font-weight: normal;
+  background-color: #F6F6FF;
+  border: 1px solid rgb(231, 230, 230) ;
+  margin: 17px ;
+}
+.open{
+  background-color: #888888;
+  border-radius: 30px;
+  font-weight: normal;
+  color: #fff;
+  margin-bottom: 50px;
+  margin: 10px 10px 10px 10px ;
+}
+.ruleHide{
+  height: 60rpx!important;
+  width: 60rpx!important;
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+}
+.isRuleShow{
+  display: block;
+}
+.isRuleHide{
+  display: none;
+}
+.ruleZhezhao{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-color:rgba(0, 0, 0, .5); 
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.ruleZhezhaoContent{
+  padding: 56rpx 0px;
+  width: 80%;
+  background: #fff;
+  margin: 40% auto;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+} 
+
+/* 项目表格 */
+.table {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 980.8rpx;
+}
+.tableX {
+  border: 1px solid #dadada;
+  border-right: 0;
+  border-bottom: 0;
+  border-left:0;
+  width: 93%;
+  height:100%
+}
+.tr, .tableY {
+  width: 1540rpx;
+  display: flex;
+  justify-content: flex-start;
+}
+.th,.td {
+  width: 200rpx;
+  padding: 10px 0;
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  text-align: center;
+}
+.th {
+  font-weight: bold;
+}
+
+.info{
+  border-radius: 30rpx;
+  margin: 5rpx 20rpx 50rpx;
+  padding: 30rpx;
+  background-color: #f0fcff;
+}
+.item{
+  margin-top: 10rpx;
+}
+
+.van-button--info{
+  width:80px;
+  height:20px
+}

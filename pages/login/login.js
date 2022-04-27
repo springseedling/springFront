@@ -6,12 +6,38 @@ Page({
    * 页面的初始数据
    */
   data: {
+    active1: false,
+    active2: false,
+    active3: false,
+    disabled: 'disabled',
+    activeNames: [],
+    Names: [],
     listJoin:[],
     user: '',
     username: '',
-    password: ''
+    password: '',
   },
   onShow: function(e){
+    var that = this
+    this.data.Names.push(wx.getStorageSync('role'))
+    if(wx.getStorageSync('role')=='学生'){
+       that.setData({
+         active1: true
+       })
+    }
+    if(wx.getStorageSync('role')=='支教组织'){
+      that.setData({
+        active2: true
+      })
+   }
+   if(wx.getStorageSync('role')=='管理员'){
+    that.setData({
+      active3: true
+    })
+ }
+    this.setData({
+      activeNames: this.data.Names
+    })
     // const userinfo = wx.getStorageSync('user')
     // if(userinfo.id){
     //   this.setData({
@@ -129,9 +155,16 @@ Page({
       title: '已退出登录！',
     })
     setTimeout(function(){
+      that.setData({
+        active1: false,
+        active2: false,
+        active3: false,
+        Names: []
+      })
       wx.setStorageSync('tokenFlag', 0)
       wx.setStorageSync('token', '')
       wx.setStorageSync('user', '')
+      wx.setStorageSync('role', '')
       that.setData({
         username: '',
         password: '',
@@ -139,5 +172,10 @@ Page({
       })
     that.onShow()
     },1000)
-  }
+  },
+  onChange(event) {
+    this.setData({
+      activeNames: event.detail,
+    });
+  },
 })

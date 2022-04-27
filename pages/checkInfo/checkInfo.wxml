@@ -1,2 +1,40 @@
-<!--pages/checkInfo/checkInfo.wxml-->
-<text>pages/checkInfo/checkInfo.wxml</text>
+<van-search
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  use-action-slot
+  bind:change="onChange0"
+  bind:search="onSearch"
+  background="#59e670"
+>
+  <view slot="action" bind:tap="onClick">搜索</view>
+</van-search>
+  <!-- <van-dropdown-menu active-color="#19caad">
+  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" bind:change="onChange1"/>
+  <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" 
+  bind:change="onChange2"/>
+</van-dropdown-menu> -->
+<!-- 表格 -->
+<view class="table">
+    <!-- 整体横向滑动 -->
+    <scroll-view class="tableX" scroll-x>
+        <!-- 表头 -->
+        <view class="tr">
+            <view class="th" style="width:40px;border-left: 1px solid #dadada;">{{"序号"}}</view>
+            <view class="th">{{"活动名称"}}</view>
+            <view class="th">{{"需求人数"}}</view>
+            <view class="th">{{"通过人数"}}</view>
+            <view class="th">{{"需求科目"}}</view>
+        </view>
+        <!-- 内容 -->
+        <!-- 除表头外纵向滑动 -->
+        <scroll-view class="tableY" scroll-y style="height: {{height}}rpx">
+            <view class="tr" wx:for="{{list}}" wx:key="index" bindtap="edit" wx:for-item="items" data-id="{{items.item_id}}">
+                <view class="td" style="width:40px;border-left: 1px solid #dadada;">{{index+1}}</view>
+                <view class="td">{{items.item_name}}</view>
+                <view class="td">{{items.need_num}}</view>
+                <view class="td">{{items.present_num}}</view>
+                <view class="td">{{items.course}}</view>
+            </view>
+        </scroll-view>
+    </scroll-view>
+</view>

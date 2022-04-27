@@ -1,8 +1,6 @@
 Page({
 
   data: {
-    day1:'',
-    day2:'',
     date1: '',
     date2: '',
     show1: false,
@@ -55,17 +53,10 @@ Page({
 
   },
   commit(){
-    if(wx.getStorageSync('role')=='学生'){
-      wx.showModal({
-        title: '您没有权限发布！',
-        showCancel: false
-      })
-    }else{
     var that = this
     if(wx.getStorageSync('token')==''){
-      wx.showModal({
+      wx.showToast({
         title: '未登录！',
-        showCancel: false
       })
     }else{
     var timestamp = Date.parse(new Date());
@@ -86,30 +77,22 @@ Page({
     //秒
     var s = date.getSeconds();
     console.log(Y+'-'+M+'-'+D+' '+h+':'+m)
-    // console.log(Y+M+D)
+    console.log(Y+M+D)
     wx.setStorageSync('time', Y+'-'+M+'-'+D+' '+h+':'+m)
     var a = this.data.image
     var b = a.join(",")
     var c = b.split(",")
-    if(this.data.orgName==''||this.data.name==''||this.data.region==''||
-    this.data.course==''||this.data.grade==''||this.data.number==''||
-    this.data.org_profile==''||this.data.act_profile==''||this.data.day1==''||
-    this.data.day2==''){
-      wx.showModal({
-        title: '请将信息填写完整！',
-        showCancel: false
-      })
-    }else{
     wx.request({
       url: 'http://localhost:8080/org/uploadActivity',
       data:{
         org_name: this.data.orgName,
-        org_id: wx.getStorageSync('uid'),
+        org_id: this.data.orgId,
         item_name: this.data.name,
         address: this.data.region,
         course: this.data.course,
         grade: this.data.grade,
         need_num: this.data.number,
+        present_num: this.data.numberd,
         release_time: wx.getStorageSync('time'),
         img: c[0],
         org_profile: this.data.org_profile,
@@ -122,15 +105,7 @@ Page({
       header:{
         'Authorization': wx.getStorageSync('token')
       },
-      success:function(res){
-        if(res.data.code==0){
-          wx.showToast({
-            title: '发布成功！',
-          })
-        }
-      }
-    })}}
-  }
+    })}
   },
   list(){
     wx.navigateTo({
